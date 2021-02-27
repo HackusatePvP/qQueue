@@ -1,0 +1,5 @@
+name: qQueue
+version: ${project.version}
+main: dev.hcr.qqueue.qQueue
+api-version: 1.7.10
+depend: [ qLib ]

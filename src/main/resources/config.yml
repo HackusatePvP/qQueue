@@ -1,0 +1,6 @@
+hcr:
+  name: "hcr"
+  enabled: true
+  paused: true
+  tick: 5
+  sending: 5
