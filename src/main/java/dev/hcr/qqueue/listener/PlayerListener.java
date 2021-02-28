@@ -2,6 +2,7 @@ package dev.hcr.qqueue.listener;
 
 import dev.hcr.qqueue.player.QueuePlayer;
 import dev.hcr.qqueue.qQueue;
+import dev.hcr.qqueue.queue.Queue;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -24,6 +25,8 @@ public class PlayerListener implements Listener {
         Player player = event.getPlayer();
         QueuePlayer queuePlayer = qQueue.getPlugin().getQueueManager().getQueuePlayer(player.getUniqueId());
         if (queuePlayer.inQueue()) {
+            Queue queue = queuePlayer.getQueue();
+            queue.remove(queuePlayer);
             queuePlayer.setQueue(null);
             queuePlayer.setPosition(0);
         }
