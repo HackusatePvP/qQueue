@@ -42,19 +42,26 @@ public class QueueTask extends BukkitRunnable {
                     }
                     return;
                 }
+            }
 
 
-                // start the queuing process
-                tick++;
-                if (tick == queue.getTick()) { // each queue can be configured to send players at a specific time
-                    int sent = 0; // each queue can be configured to send a specific amount of players when the tick is reached.
-                    do {
+            // start the queuing process
+
+            if (queue.getPlayers().size() == 0) {
+                return; // stop the queue from processing if there are no players in queue
+            }
+
+            tick++;
+            if (tick == queue.getTick()) { // each queue can be configured to send players at a specific time
+                int sent = 0; // each queue can be configured to send a specific amount of players when the tick is reached.
+                do {
+                    for (QueuePlayer queuePlayer : queue.getPlayers()) {
                         sent++;
                         BungeeUtils.send(queuePlayer.getPlayer(), queue.getName());
-                    } while (sent < queue.getSending());
-                    queue.setPlayers(queue.sortPlayersWeight());
-                    tick = 0;
-                }
+                    }
+                } while (sent < queue.getSending()) ;
+                queue.setPlayers(queue.sortPlayersWeight());
+                tick = 0;
             }
         }
     }
