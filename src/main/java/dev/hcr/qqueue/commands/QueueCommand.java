@@ -46,6 +46,7 @@ public class QueueCommand {
             return;
         }
         queue.setPaused(true);
+        qQueue.getPlugin().getConfigFile().save();
         sender.sendMessage(StringUtils.format("&cYou have paused the " + queue.getName() + " queue."));
     }
 
@@ -57,6 +58,7 @@ public class QueueCommand {
             return;
         }
         queue.setPaused(false);
+        qQueue.getPlugin().getConfigFile().save();
         sender.sendMessage(StringUtils.format("&aYou have resumed the " + queue.getName() + " queue."));
     }
 
@@ -68,6 +70,7 @@ public class QueueCommand {
             return;
         }
         queue.setEnabled(!queue.isEnabled());
+        qQueue.getPlugin().getConfigFile().save();
         sender.sendMessage(StringUtils.format("&7You have " + (queue.isEnabled() ? "&aenabled" : "&cdisabled") + " &7the " + queue.getName() + " queue."));
     }
 }
