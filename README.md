@@ -1,5 +1,5 @@
 # qQueue
-A simple Queue plugin designed for HCR @ FrozenHQ Network
+A simple Queue plugin designed for HCR @ FrozenHQ Network. This requires qLib which I can not upload to github (obviosuly).
 
 ## API
 qQueue has a very important object called QueuePlayer which will store all queue information dealing with players. To access to the object simple do the follwoing.
