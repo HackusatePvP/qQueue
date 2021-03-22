@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 
 public class LeaveQueueCommand {
 
-    @Command(names = "leavequeue", permission = "op")
+    @Command(names = "leavequeue", permission = "")
     public static void leave(Player sender) {
         QueuePlayer queuePlayer = qQueue.getPlugin().getQueueManager().getQueuePlayer(sender.getUniqueId());
         if (!queuePlayer.inQueue()) {

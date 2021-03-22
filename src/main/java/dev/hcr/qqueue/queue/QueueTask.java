@@ -21,7 +21,7 @@ public class QueueTask extends BukkitRunnable {
                 if (!queue.isEnabled()) {
                     queuePlayer.getPlayer().sendMessage(StringUtils.format("&c" + queue.getName() + " is not enabled. Leaving queue..."));
                     queue.remove(queuePlayer);
-                    return;
+                    continue;
                 }
 
                 if (queue.isPaused()) {
@@ -40,15 +40,18 @@ public class QueueTask extends BukkitRunnable {
                         message.forEach(msg -> queuePlayer.getPlayer().sendMessage(StringUtils.format(msg)));
                         msg = 0;
                     }
-                    return;
                 }
+            }
+
+            if (queue.isPaused()) {
+                continue;
             }
 
 
             // start the queuing process
 
             if (queue.getPlayers().size() == 0) {
-                return; // stop the queue from processing if there are no players in queue
+                continue; // stop the queue from processing if there are no players in queue
             }
 
             tick++;

@@ -19,7 +19,7 @@ public class PlayCommand {
         }
         QueuePlayer queuePlayer = qQueue.getPlugin().getQueueManager().getQueuePlayer(sender.getUniqueId());
         if (queuePlayer.inQueue()) {
-            sender.sendMessage(StringUtils.format("&cYou are already queueing " + queuePlayer.getQueue().getName() + ". /leave queue."));
+            sender.sendMessage(StringUtils.format("&cYou are already queueing " + queuePlayer.getQueue().getName() + ". /leavequeue."));
             return;
         }
         queue.add(queuePlayer);

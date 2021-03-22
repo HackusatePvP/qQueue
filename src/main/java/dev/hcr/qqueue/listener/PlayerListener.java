@@ -13,11 +13,11 @@ public class PlayerListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-       QueuePlayer queuePlayer = new QueuePlayer(event.getPlayer().getUniqueId(), event.getPlayer().getName());
+        QueuePlayer queuePlayer = new QueuePlayer(event.getPlayer().getUniqueId(), event.getPlayer().getName());
 
-       if (event.getPlayer().getName().equalsIgnoreCase("Hackusate_PvP")) {
-           queuePlayer.setWeight(100);
-       }
+        if (event.getPlayer().getName().equalsIgnoreCase("Hackusate_PvP")) {
+            queuePlayer.setWeight(100);
+        }
     }
 
     @EventHandler

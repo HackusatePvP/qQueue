@@ -60,4 +60,8 @@ public class Queue {
         queuePlayer.setQueue(null);
         queuePlayer.setPosition(0);
     }
+
+    public int getPlayersInQueue() {
+        return players.size();
+    }
 }

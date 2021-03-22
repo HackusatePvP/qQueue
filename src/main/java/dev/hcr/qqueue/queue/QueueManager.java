@@ -4,7 +4,6 @@ import dev.hcr.qqueue.player.QueuePlayer;
 import dev.hcr.qqueue.qQueue;
 import lombok.Getter;
 import net.frozenorb.qlib.util.ConfigFile;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
